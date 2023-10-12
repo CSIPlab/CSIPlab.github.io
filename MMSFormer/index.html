@@ -1,1 +1,150 @@
-<h1>MMSFormer</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Multimodal Transformer for Material Segmentation">
+    <meta name="author" content="Md Kaykobad Reza, Ashley Prater-Bennette, M. Salman Asif">
+
+    <title>Multimodal Transformer for Material Segmentation</title>
+    <!-- Bootstrap core CSS -->
+    <!--link href="bootstrap.min.css" rel="stylesheet"-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="offcanvas.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="src/css/style.css">
+</head>
+
+<body>
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container"></div>
+    <h2>Multimodal Transformer for Material Segmentation</h2>
+        <p class="abstract"><b>Performing multimodal material segmentation with transformer</b></p>
+    <hr>
+    <p class="authors">
+        <a href="https://kaykobad.github.io/" target="_blank">Md Kaykobad Reza<sup> 1</sup></a>,
+        <a href="https://scholar.google.com/citations?user=f1WPBE8AAAAJ&hl=en" target="_blank">Ashley Prater-Bennette<sup> 2</sup></a>, and
+        <a href="https://intra.ece.ucr.edu/~sasif/" target="_blank"> M. Salman Asif<sup> 1</sup></a>
+    </p>
+    <p>
+        <a><sup>1</sup> University of California Riverside, CA, USA</a></br>
+        <a><sup>2</sup> Air Force Research Laboratory, NY, USA</a></br>
+    </p>
+
+    <div>
+        <a class="btn btn-primary" href="https://arxiv.org/abs/2309.04001" target="_blank">Paper (arXiv)</a> 
+        <a class="btn btn-primary" href="https://github.com/CSIPlab/MMSFormer" target="_blank">Code (GitHub)</a>
+        <a class="btn btn-primary" href="https://CSIPlab.github.io/MMSFormer">Webpage</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="section">
+        <h2>Abstract</h2>
+        <hr>
+        <p>Leveraging information across diverse modalities is known to enhance performance on multimodal segmentation tasks. However, effectively fusing information from different modalities remains challenging due to the unique characteristics of each modality. In this paper, we propose a novel fusion strategy that can effectively fuse information from different combinations of four different modalities: RGB, Angle of Linear Polarization (AoLP), Degree of Linear Polarization (DoLP) and Near-Infrared (NIR). We also propose a new model named Multi-Modal Segmentation Transformer (MMSFormer) that incorporates the proposed fusion strategy to perform multimodal material segmentation. MMSFormer achieves 52.05% mIoU outperforming the current state-of-the-art on Multimodal Material Segmentation (MCubeS) dataset. For instance, our method provides significant improvement in detecting gravel (+10.4%) and human (+9.1%) classes. Ablation studies show that different modules in the fusion block are crucial for overall model performance. Furthermore, our ablation studies also highlight the capacity of different input modalities to improve performance in the identification of different types of materials.</p>
+        <br>
+
+        <div class="row">
+            <div class="col text-center">
+                <img src="./img/MMSFormer-Overall-2.png" style="width:75%" alt="Banner">
+                <p class="text-left"><b>Figure 1:</b> Overall architecture of the proposed MMSFormer model. Each image passes through a modality-specific encoder where we extract hierarchical features. Then we fuse the extracted features using the proposed fusion block and pass the fused features to the decoder for predicting the segmentation maps.</p>
+            </div>
+        </div>
+
+        <div class="row">
+			<div class="col text-center">
+                <img src="./img/MMSFormer-Fusion.png" style="width:70%" alt="Banner">
+                <p class="text-left"><b>Figure 2:</b> Proposed multimodal fusion block. We first concatenate all the features along the channel dimension and pass it through MLP layer to fuse them. Then a mixer layer captures and mixes multi-scale features using parallel convolutions and MLP layers. We use Squeeze and Excitation block as channel attention in the residual connection.</p>
+            </div>
+        </div>
+
+        <!-- <video width="100%" height="400" controls="True" preload="none" loop muted autoplay = 'autoplay' playsInline>
+            <source type="video/mp4" src="img/Presentation1.mov" />
+            <source type="video/webm" src="img/video1.webm" />
+        </video> -->
+    </div>
+
+
+    <div class="section">
+        <h2>Comparison with Current State of the Art Models</h2>
+        <hr>
+
+        <div class="row">
+			<div class="col text-center">
+                <img src="./img/comparison-with-sota.png" style="width:50%" alt="Banner">
+                <p class="text-left"><b>Table 1:</b> Performance comparison on MCubeS dataset. Here A, D and N stand for Angle of Linear Polarization (AoLP), Degree of Linear Polarization (DoLP) and Near-Infrared (NIR) respectively.</p>
+            </div>
+        </div>
+
+        <div class="row">
+			<div class="col text-center">
+                <img src="./img/ours-vs-cmnext.png" style="width:100%" alt="Banner">
+                <p class="text-left"><b>Figure 3:</b> Visualization of results for RGB and all modalities (RGB-A-D-N) prediction with CMNeXt and our proposed MMSFormer. For brevity, we only show the RGB image and Ground Truth material segmentation maps. Our model provides overall better results and correctly identifies asphalt, gravel, and road markings as indicated in the rectangular bounding boxes.</p>
+            </div>
+        </div>
+
+        <div class="row">
+			<div class="col text-center">
+                <img src="./img/perclass-iou-comparison-with-sota.png" style="width:100%" alt="Banner">
+                <p class="text-left"><b>Table 2:</b> Per class % IoU comparison on Multimodal Material Segmentation (MCubeS) dataset for different modality combinations. As we add modalities incrementally, overall performance increases gradually. This table also shows that specific modality combinations assist in identifying specific types of materials better.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Effect of Adding Different Modalities</h2>
+        <hr>
+        <div class="row">
+			<div class="col text-center">
+                <img src="./img/perclass-iou-when-incrementally-adding-modality.png" style="width:100%" alt="Banner">
+                <p class="text-left"><b>Table 3:</b> Per class % IoU comparison on Multimodal Material Segmentation (MCubeS) dataset for different modality combinations. As we add modalities incrementally, overall performance increases gradually. This table also shows that specific modality combinations assist in identifying specific types of materials better.</p>
+            </div>
+        </div>
+
+        <div class="row">
+			<div class="col text-center">
+                <img src="./img/effect-of-modality-addition.png" style="width:100%" alt="Banner">
+                <p class="text-left"><b>Figure 4:</b> Visualization of results for prediction using different modality combinations of our proposed MMSFormer model. Detection of concrete, gravel and road markings become more accurate as we add more modalities as shown in the rectangular bounding boxes.</p>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <h2>Paper</h2>
+        <hr>
+        <div>
+            <div class="list-group">
+                <a href="https://arxiv.org/abs/2309.04001"
+                   class="list-group-item">
+                    <img src="img/paper.jpeg" style="width:100%; margin-right:-20px; margin-top:-10px;">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Bibtex</h2>
+        <hr>
+        <div class="bibtexsection">
+            @misc{reza2023multimodal,
+                title={Multimodal Transformer for Material Segmentation}, 
+                author={Md Kaykobad Reza and Ashley Prater-Bennette and M. Salman Asif},
+                year={2023},
+                eprint={2309.04001},
+                archivePrefix={arXiv},
+                primaryClass={cs.CV}
+            }
+        </div>
+    </div>
+
+    <hr>
+</div>
+
+</body>
+</html>
