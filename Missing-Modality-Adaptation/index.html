@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Robust Multimodal Learning with Missing Modalities via Parameter-Efficient Adaptation">
+    <meta name="author" content="Md Kaykobad Reza, Ashley Prater-Bennette, M. Salman Asif">
+
+    <title>Robust Multimodal Learning with Missing Modalities via Parameter-Efficient Adaptation</title>
+    <!-- Bootstrap core CSS -->
+    <!--link href="bootstrap.min.css" rel="stylesheet"-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="offcanvas.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="src/css/style.css">
+</head>
+
+<body>
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container"></div>
+    <h2>Robust Multimodal Learning with Missing Modalities</h2> 
+    <h2>via Parameter-Efficient Adaptation</h2>
+        <p class="abstract"><b>Adapting multimodal models for different missing modality scenarios</b></p>
+    <hr>
+    <p class="authors">
+        <a href="https://kaykobad.github.io/" target="_blank">Md Kaykobad Reza<sup> 1</sup></a>,
+        <a href="https://scholar.google.com/citations?user=f1WPBE8AAAAJ&hl=en" target="_blank">Ashley Prater-Bennette<sup> 2</sup></a>, and
+        <a href="https://intra.ece.ucr.edu/~sasif/" target="_blank"> M. Salman Asif<sup> 1</sup></a>
+    </p>
+    <p>
+        <a><sup>1</sup> University of California Riverside, CA, USA</a></br>
+        <a><sup>2</sup> Air Force Research Laboratory, NY, USA</a></br>
+    </p>
+
+    <div>
+        <a class="btn btn-primary" href="https://arxiv.org/abs/2310.03986" target="_blank">Paper (arXiv)</a> 
+        <a class="btn btn-primary" href="https://github.com/CSIPlab/Robust-multimodal-learning" target="_blank">Code (GitHub)</a>
+        <a class="btn btn-primary" href="https://CSIPlab.github.io/Missing-Modality-Adaptation">Webpage</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="section">
+        <div class="row">
+            <div class="col text-center">
+                <img src="./img/ssf-light.png" style="width:80%" alt="Banner">
+                <p class="text-left"><b>Figure 1:</b> a) Overview of our approach for robust multimodal learning with missing modalities via parameter-efficient adaptation. A model pretrained on all the modalities is adapted using a small number of parameters to handle different modality combinations.  b) Low-rank model adaption computes features using frozen and low-rank weights and combine them.  c) Scale and shift feature adaptation transforms input by element-wise multiplication and addition. One set of parameters is learned for each modality combination.</p>
+            </div>
+        </div>
+
+        <h2>Abstract</h2>
+        <hr>
+        <p>Multimodal learning seeks to utilize data from multiple sources to improve the overall performance of downstream tasks. It is desirable for redundancies in the data to make multimodal systems robust to missing or corrupted observations in some correlated modalities. However, we observe that the performance of several existing multimodal networks significantly deteriorates if one or multiple modalities are absent at test time. To enable robustness to missing modalities, we propose simple and parameter-efficient adaptation procedures for pretrained multimodal networks. In particular, we exploit low-rank adaptation and modulation of intermediate features to compensate for the missing modalities. We demonstrate that such adaptation can partially bridge performance drop due to missing modalities and outperform independent, dedicated networks trained for the available modality combinations in some cases. The proposed adaptation requires fewer than 0.7% of the total model parameters. We conduct a series of experiments to highlight the robustness of our proposed method using diverse datasets for RGB-thermal and RGB-Depth semantic segmentation, multimodal material segmentation, and multimodal sentiment analysis tasks. Our proposed method demonstrates versatility across various tasks and datasets, and outperforms existing methods for robust multimodal learning with missing modalities.</p>
+        <br>
+
+        <!-- <video width="100%" height="400" controls="True" preload="none" loop muted autoplay = 'autoplay' playsInline>
+            <source type="video/mp4" src="img/Presentation1.mov" />
+            <source type="video/webm" src="img/video1.webm" />
+        </video> -->
+    </div>
+
+
+    <div class="section">
+        <h2>Experiments for Multimodal Segmentation</h2>
+        <hr>
+
+        <div class="row">
+			<div class="col text-center">
+                <img src="./img/overall-comparison-for-segmentation.png" style="width:70%" alt="Banner">
+                <p class="text-left"><b>Table 1:</b> Performance of Pretrained, Dedicated, and Adapted networks with missing modalities. CMNeXt is the base model for multimodal semantic segmentation  for MFNet and NYUDv2 datasets and multimodal material segmentation for MCubeS dataset. HHA-encoded images were used instead of raw depth maps. <b>Bold</b> letters represent best results.</p>
+            </div>
+        </div>
+
+        <div class="row">
+			<div class="col text-center">
+                <img src="./img/visualization.png" style="width:85%" alt="Banner">
+                <p class="text-left"><b>Figure 2:</b> Visualization of predicted segmentation maps for pretrained and adapted models on MFNet and NYUDv2 datasets for multimodal semantic segmentation and MCubeS dataset for multimodal material segmentation. Only RGB images are shown from MCubeS dataset for brevity. CMNeXt column shows the predictions when all the modalities are available. Segmentation quality improves significantly after model adaptation for all the input modality combinations. A, D and N stand for angle of linear polarization, degree of linear polarization and near-infrared respectively.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Comparison with Robust Models and Other Adaptation Methods</h2>
+        <hr>
+
+        <div class="row">
+			<div class="col text-center">
+                <img src="./img/mfnet.png" style="width:70%" alt="Banner">
+                <p class="text-left"><b>Table 2:</b> Performance comparison with existing robust methods for MFNet dataset. RGB and Thermal columns report performance when only RGB and Thermal are available. Average column reports average performance when one of the two modalities gets missing. '-' indicates that results for those cells are not published. Mean accuracy (mAcc) and % mean intersection over union (mIoU) are shown for all the experiments.</p>
+            </div>
+        </div>
+
+        <div class="row">
+			<div class="col text-center">
+                <img src="./img/nyu.png" style="width:70%" alt="Banner">
+                <p class="text-left"><b>Table 3:</b> Performance comparison with existing robust methods for NYUDv2 dataset. RGB and Depth columns report performance when only RGB and Depth are available. Average column indicates average performance when one of the two modalities gets missing.  * indicates that available codes and pretrained models from the authors were used to generate the results. Other results are from the corresponding papers.</p>
+            </div>
+        </div>
+
+        <div class="row">
+			<div class="col text-center">
+                <img src="./img/comparison-with-other-adaptation.png" style="width:75%" alt="Banner">
+                <p class="text-left"><b>Table 4:</b> Performance comparison (% mIoU) of different parameter-efficient adaptation techniques for MFNet, NYUDv2, and MCubeS datasets. Each column reports mIoU of the Adapted model with the corresponding modalities, and Avg indicates average performance. A and D denote Angle and Degree of Linear Polarization.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Experiments for Multimodal Sentiment Analysis</h2>
+        <hr>
+        <div class="row">
+			<div class="col text-center">
+                <img src="./img/comparison-for-mmsa.png" style="width:70%" alt="Banner">
+                <p class="text-left"><b>Table 5:</b> Performance of Pretrained and Adapted models for multimodal sentiment analysis with CMU-MOSI and CMU-MOSEI datasets. Multimodal Transformer (MulT) as the base model. A, V and T denote audio, video, and text, respectively. &uarr; means higher is better and &darr; means lower is better. The Adapted model outperforms the Pretrained model with missing modalities.</p>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <h2>Paper</h2>
+        <hr>
+        <div>
+            <div class="list-group">
+                <a href="https://arxiv.org/abs/2310.03986"
+                   class="list-group-item">
+                    <img src="img/paper.jpeg" style="width:100%; margin-right:-20px; margin-top:-10px;">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Bibtex</h2>
+        <hr>
+        <div class="bibtexsection">
+            @misc{reza2023robust,
+                title={Robust Multimodal Learning with Missing Modalities via Parameter-Efficient Adaptation}, 
+                author={Md Kaykobad Reza and Ashley Prater-Bennette and M. Salman Asif},
+                year={2023},
+                eprint={2310.03986},
+                archivePrefix={arXiv},
+                primaryClass={cs.CV}
+            }
+        </div>
+    </div>
+
+    <hr>
+</div>
+
+</body>
+</html>
