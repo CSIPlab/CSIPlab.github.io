@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Multimodal Transformer for Material Segmentation">
+    <meta name="description" content="MMSFormer: Multimodal Transformer for Material and Semantic Segmentation">
     <meta name="author" content="Md Kaykobad Reza, Ashley Prater-Bennette, M. Salman Asif">
 
-    <title>Multimodal Transformer for Material Segmentation</title>
+    <title>MMSFormer: Multimodal Transformer for Material and Semantic Segmentation</title>
     <!-- Bootstrap core CSS -->
     <!--link href="bootstrap.min.css" rel="stylesheet"-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -22,8 +22,9 @@
 
 <div class="jumbotron jumbotron-fluid">
     <div class="container"></div>
-    <h2>Multimodal Transformer for Material Segmentation</h2>
-        <p class="abstract"><b>Performing multimodal material segmentation with transformer</b></p>
+    <h2>MMSFormer: Multimodal Transformer for </h2>
+    <h2>Material and Semantic Segmentation</h2>
+        <p class="abstract"><b>Performing multimodal material and semantic segmentation with transformer</b></p>
     <hr>
     <p class="authors">
         <a href="https://kaykobad.github.io/" target="_blank">Md Kaykobad Reza<sup> 1</sup></a>,
@@ -46,20 +47,13 @@
     <div class="section">
         <h2>Abstract</h2>
         <hr>
-        <p>Leveraging information across diverse modalities is known to enhance performance on multimodal segmentation tasks. However, effectively fusing information from different modalities remains challenging due to the unique characteristics of each modality. In this paper, we propose a novel fusion strategy that can effectively fuse information from different combinations of four different modalities: RGB, Angle of Linear Polarization (AoLP), Degree of Linear Polarization (DoLP) and Near-Infrared (NIR). We also propose a new model named Multi-Modal Segmentation Transformer (MMSFormer) that incorporates the proposed fusion strategy to perform multimodal material segmentation. MMSFormer achieves 52.05% mIoU outperforming the current state-of-the-art on Multimodal Material Segmentation (MCubeS) dataset. For instance, our method provides significant improvement in detecting gravel (+10.4%) and human (+9.1%) classes. Ablation studies show that different modules in the fusion block are crucial for overall model performance. Furthermore, our ablation studies also highlight the capacity of different input modalities to improve performance in the identification of different types of materials.</p>
+        <p>Leveraging information across diverse modalities is known to enhance performance on multimodal segmentation tasks. However, effectively fusing information from different modalities remains challenging due to the unique characteristics of each modality. In this paper, we propose a novel fusion strategy that can effectively fuse information from different modality combinations. We also propose a new model named Multi-Modal Segmentation TransFormer (MMSFormer) that incorporates the proposed fusion strategy to perform multimodal material and semantic segmentation tasks. MMSFormer outperforms current state-of-the-art models on three different datasets. As we begin with only one input modality, performance improves progressively as additional modalities are incorporated, showcasing the effectiveness of the fusion block in combining useful information from diverse input modalities. Ablation studies show that different modules in the fusion block are crucial for overall model performance. Furthermore, our ablation studies also highlight the capacity of different input modalities to improve performance in the identification of different types of materials.</p>
         <br>
 
         <div class="row">
             <div class="col text-center">
-                <img src="./img/MMSFormer-Overall-2.png" style="width:75%" alt="Banner">
-                <p class="text-left"><b>Figure 1:</b> Overall architecture of the proposed MMSFormer model. Each image passes through a modality-specific encoder where we extract hierarchical features. Then we fuse the extracted features using the proposed fusion block and pass the fused features to the decoder for predicting the segmentation maps.</p>
-            </div>
-        </div>
-
-        <div class="row">
-			<div class="col text-center">
-                <img src="./img/MMSFormer-Fusion.png" style="width:70%" alt="Banner">
-                <p class="text-left"><b>Figure 2:</b> Proposed multimodal fusion block. We first concatenate all the features along the channel dimension and pass it through MLP layer to fuse them. Then a mixer layer captures and mixes multi-scale features using parallel convolutions and MLP layers. We use Squeeze and Excitation block as channel attention in the residual connection.</p>
+                <img src="./img/MMSFormer-min.png" style="width:85%" alt="Banner">
+                <p class="text-left"><b>Figure 1:</b> a) Overall architecture of MMSFormer model. Each image passes through a modality-specific encoder where we extract hierarchical features. Then we fuse the extracted features using the proposed fusion block and pass the fused features to the decoder for predicting the segmentation map. (b) Illustration of the mix transformer block. Each block applies a spatial reduction before applying multi-head attention to reduce computational cost. (c) Proposed multimodal fusion block. We first concatenate all the features along the channel dimension and pass it through linear fusion layer to fuse them. Then the feature tensor is fed to linear projection and parallel convolution layers to capture multi-scale features. We use Squeeze and Excitation block [28] as channel attention in the residual connection to dynamically re-calibrate the features along the channel dimension.</p>
             </div>
         </div>
 
@@ -76,22 +70,36 @@
 
         <div class="row">
 			<div class="col text-center">
-                <img src="./img/comparison-with-sota.png" style="width:50%" alt="Banner">
-                <p class="text-left"><b>Table 1:</b> Performance comparison on MCubeS dataset. Here A, D and N stand for Angle of Linear Polarization (AoLP), Degree of Linear Polarization (DoLP) and Near-Infrared (NIR) respectively.</p>
+                <img src="./img/fmb-mcubes.jpeg" style="width:90%" alt="Banner">
+                <p class="text-left"><b>Table 1:</b> performance comparison on FMB (left) and MCubeS (right) datasets. Here A, D, and N represent angle of linear polarization (AoLP), degree of linear polarization (DoLP), and near-infrared (NIR) respectively.</p>
             </div>
         </div>
 
         <div class="row">
 			<div class="col text-center">
-                <img src="./img/ours-vs-cmnext.png" style="width:85%" alt="Banner">
-                <p class="text-left"><b>Figure 3:</b> Visualization of results for RGB and all modalities (RGB-A-D-N) prediction with CMNeXt and our proposed MMSFormer. For brevity, we only show the RGB image and Ground Truth material segmentation maps. Our model provides overall better results and correctly identifies asphalt, gravel, and road markings as indicated in the rectangular bounding boxes.</p>
+                <img src="./img/visualization-with-sota-min.png" style="width:85%" alt="Banner">
+                <p class="text-left"><b>Figure 2:</b> Visualization of predictions on MCubeS and PST900 datasets. Figure 2(a) shows RGB and all modalities (RGB-A-D-N) prediction from CMNeXt and our model on MCubeS dataset. For brevity, we only show the RGB image and ground truth material segmentation maps along with the predictions. Figure 2(b) shows predictions from RTFNet, FDCNet and our model for RGB-thermal input modalities on PST900 dataset. Our model shows better predictions on both of the datasets.</p>
             </div>
         </div>
 
         <div class="row">
 			<div class="col text-center">
-                <img src="./img/perclass-iou-comparison-with-sota.png" style="width:100%" alt="Banner">
-                <p class="text-left"><b>Table 2:</b> Per class % IoU comparison on Multimodal Material Segmentation (MCubeS) dataset for different modality combinations. As we add modalities incrementally, overall performance increases gradually. This table also shows that specific modality combinations assist in identifying specific types of materials better.</p>
+                <img src="./img/mcubes-per-class-sota-min.png" style="width:100%" alt="Banner">
+                <p class="text-left"><b>Table 2:</b> Per-class % IoU comparison on MCubeS dataset. Our proposed MMSFormer model shows better performance in detecting most of the classes compared to the current state-of-the-art models. ∗ indicates that the code and pretrained model from the authors were used to generate the results.</p>
+            </div>
+        </div>
+
+        <div class="row">
+			<div class="col text-center">
+                <img src="./img/FMB-performance-min.png" style="width:100%" alt="Banner">
+                <p class="text-left"><b>Table 3:</b> Per-class % IoU comparison on FMB dataset for both RGB only and RGB-infrared modalities. We show the comparison for 8 classes (out of 14) that are published. T-Lamp and T-Sign stand for Traffic Lamp and Traffic Sign respectively. Our model outperforms all the methods for all the classes except for the truck class.</p>
+            </div>
+        </div>
+
+        <div class="row">
+			<div class="col text-center">
+                <img src="./img/PST-performance-min.png" style="width:100%" alt="Banner">
+                <p class="text-left"><b>Table 4:</b> Performance comparison on PST900 dataset. We show per-class % IoU as well as % mIoU for all the classes.</p>
             </div>
         </div>
     </div>
@@ -101,15 +109,15 @@
         <hr>
         <div class="row">
 			<div class="col text-center">
-                <img src="./img/perclass-iou-when-incrementally-adding-modality.png" style="width:100%" alt="Banner">
-                <p class="text-left"><b>Table 3:</b> Per class % IoU comparison on Multimodal Material Segmentation (MCubeS) dataset for different modality combinations. As we add modalities incrementally, overall performance increases gradually. This table also shows that specific modality combinations assist in identifying specific types of materials better.</p>
+                <img src="./img/mcubes-per-class-modality-combination-min.png" style="width:100%" alt="Banner">
+                <p class="text-left"><b>Table 5:</b> er class % IoU comparison on Multimodal Material Segmentation (MCubeS) dataset for different modality combinations. As we add modalities incrementally, overall performance increases gradually. This table also shows that specific modality combinations assist in identifying specific types of materials better.</p>
             </div>
         </div>
 
         <div class="row">
 			<div class="col text-center">
-                <img src="./img/effect-of-modality-addition.png" style="width:85%" alt="Banner">
-                <p class="text-left"><b>Figure 4:</b> Visualization of results for prediction using different modality combinations of our proposed MMSFormer model. Detection of concrete, gravel and road markings become more accurate as we add more modalities as shown in the rectangular bounding boxes.</p>
+                <img src="./img/visualization-modality-combination-min.png" style="width:85%" alt="Banner">
+                <p class="text-left"><b>Figure 3:</b> The figure below shows the visualization of predicted segmentation maps for different modality combinations on MCubeS and FMB datasets. Both figures show that prediction accuracy increases as we incrementally add new modalities. They also illustrate the fusion block’s ability to effectively combine information from different modality combinations.</p>
             </div>
         </div>
     </div>
@@ -133,7 +141,7 @@
         <hr>
         <div class="bibtexsection">
     @misc{reza2023multimodal,
-        title={Multimodal Transformer for Material Segmentation}, 
+        title={MMSFormer: Multimodal Transformer for Material and Semantic Segmentation}, 
         author={Md Kaykobad Reza and Ashley Prater-Bennette and M. Salman Asif},
         year={2023},
         eprint={2309.04001},
