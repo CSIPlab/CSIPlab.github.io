@@ -155,3 +155,23 @@
             height: 25px;
             border-right: 2px solid blue;
 }
+
+
+.imgcontainer {
+    display: flex;
+    justify-content: space-between; /* Adjusts space between the images */
+    align-items: center; /* Aligns images vertically center */
+}
+.imgcontainer img {
+    max-width: 100%; /* Ensures images are responsive */
+    height: auto;
+}
+
+figure {
+  margin: 0 10px; /* Adjusts the space between images */
+  text-align: center; /* Centers the caption text */
+}
+figure img {
+  max-width: 100%; /* Ensures images are responsive */
+  height: auto;
+}

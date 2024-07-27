@@ -47,14 +47,14 @@
     <div class="section">
         <div class="row">
             <div class="col text-center">
-                <img src="./img/ssf-light.png" style="width:80%" alt="Banner">
-                <p class="text-left"><b>Figure 1:</b> a) Overview of our approach for robust multimodal learning with missing modalities via parameter-efficient adaptation. A model pretrained on all the modalities is adapted using a small number of parameters to handle different modality combinations.  b) Low-rank model adaption computes features using frozen and low-rank weights and combine them.  c) Scale and shift feature adaptation transforms input by element-wise multiplication and addition. One set of parameters is learned for each modality combination.</p>
+                <img src="./img/ssf-final.png" style="width:80%" alt="Banner">
+                <p class="text-left"><b>Figure 1:</b> a) Overview of our model adaptation approach for robust MML. A model pretrained on all the modalities is adapted using a small number of learnable parameters to handle different modality combinations. We insert adaptable layers after each layer of the encoders and the fusion block to learn the modulation as a function of the available input modalities to compensate for the missing modalities. The grayed-out branch (missing modality) is inactive and does not contribute to the output. b) Low-rank model adaption computes features using frozen weights and low-rank weight updates and combine them. c) Scale and shift feature adaptation transforms input by element-wise multiplication and addition.</p>
             </div>
         </div>
 
         <h2>Abstract</h2>
         <hr>
-        <p>Multimodal learning seeks to utilize data from multiple sources to improve the overall performance of downstream tasks. It is desirable for redundancies in the data to make multimodal systems robust to missing or corrupted observations in some correlated modalities. However, we observe that the performance of several existing multimodal networks significantly deteriorates if one or multiple modalities are absent at test time. To enable robustness to missing modalities, we propose simple and parameter-efficient adaptation procedures for pretrained multimodal networks. In particular, we exploit low-rank adaptation and modulation of intermediate features to compensate for the missing modalities. We demonstrate that such adaptation can partially bridge performance drop due to missing modalities and outperform independent, dedicated networks trained for the available modality combinations in some cases. The proposed adaptation requires fewer than 0.7% of the total model parameters. We conduct a series of experiments to highlight the robustness of our proposed method using diverse datasets for RGB-thermal and RGB-Depth semantic segmentation, multimodal material segmentation, and multimodal sentiment analysis tasks. Our proposed method demonstrates versatility across various tasks and datasets, and outperforms existing methods for robust multimodal learning with missing modalities.</p>
+        <p>Multimodal learning seeks to utilize data from multiple sources to improve the overall performance of downstream tasks. It is desirable for redundancies in the data to make multimodal systems robust to missing or corrupted observations in some correlated modalities. However, we observe that the performance of several existing multimodal networks significantly deteriorates if one or multiple modalities are absent at test time. To enable robustness to missing modalities, we propose a simple and parameter-efficient adaptation procedure for pretrained multimodal networks. In particular, we exploit modulation of intermediate features to compensate for the missing modalities. We demonstrate that such adaptation can partially bridge performance drop due to missing modalities and outperform independent, dedicated networks trained for the available modality combinations in some cases. The proposed adaptation requires extremely small number of parameters (e.g., fewer than 1% of the total parameters) and applicable to a wide range of modality combinations and tasks. We conduct a series of experiments to highlight the missing modality robustness of our proposed method on five different multimodal tasks across seven datasets. Our proposed method demonstrates versatility across various tasks and datasets, and outperforms existing methods for robust multimodal learning with missing modalities.</p>
         <br>
 
         <!-- <video width="100%" height="400" controls="True" preload="none" loop muted autoplay = 'autoplay' playsInline>
@@ -70,15 +70,15 @@
 
         <div class="row">
 			<div class="col text-center">
-                <img src="./img/overall-comparison-for-segmentation.png" style="width:70%" alt="Banner">
-                <p class="text-left"><b>Table 1:</b> Performance of Pretrained, Dedicated, and Adapted networks with missing modalities. CMNeXt is the base model for multimodal semantic segmentation  for MFNet and NYUDv2 datasets and multimodal material segmentation for MCubeS dataset. HHA-encoded images were used instead of raw depth maps. <b>Bold</b> letters represent best results.</p>
+                <img src="./img/overall-comparison-for-segmentation.png" style="width:100%" alt="Banner">
+                <p class="text-left"><b>Table 1:</b> Performance comparison with different baseline methods for multimodal semantic segmentation on MFNet and NYUDv2 datasets and multimodal material segmentation on MCubeS dataset. We use CMNeXt as the base model. <b>Bold</b> letters represent best results.</p>
             </div>
         </div>
 
         <div class="row">
 			<div class="col text-center">
                 <img src="./img/visualization.png" style="width:85%" alt="Banner">
-                <p class="text-left"><b>Figure 2:</b> Visualization of predicted segmentation maps for pretrained and adapted models on MFNet and NYUDv2 datasets for multimodal semantic segmentation and MCubeS dataset for multimodal material segmentation. Only RGB images are shown from MCubeS dataset for brevity. CMNeXt column shows the predictions when all the modalities are available. Segmentation quality improves significantly after model adaptation for all the input modality combinations. A, D and N stand for angle of linear polarization, degree of linear polarization and near-infrared respectively.</p>
+                <p class="text-left"><b>Figure 2:</b> Examples of predicted segmentation maps for the Pretrained and Adapted models. Title above each subimage shows method name (available modalities). CMNeXt column shows the predictions with all the modalities. Segmentation quality improves significantly after model adaptation for all input modality combinations. Green boxes highlight areas with salient differences in results (e.g., cars and humans missing in the Pretrained model with missing modalities but visible in the Adapted model). For MCubeS dataset, we only show RGB input images for brevity. A, D and N denote angle of linear polarization, degree of linear polarization, and near-infrared, respectively.</p>
             </div>
         </div>
     </div>
@@ -89,21 +89,21 @@
 
         <div class="row">
 			<div class="col text-center">
-                <img src="./img/mfnet.png" style="width:70%" alt="Banner">
-                <p class="text-left"><b>Table 2:</b> Performance comparison with existing robust methods for MFNet dataset. RGB and Thermal columns report performance when only RGB and Thermal are available. Average column reports average performance when one of the two modalities gets missing. '-' indicates that results for those cells are not published. Mean accuracy (mAcc) and % mean intersection over union (mIoU) are shown for all the experiments.</p>
+                <img src="./img/mfnet.png" style="width:100%" alt="Banner">
+                <p class="text-left"><b>Table 2:</b> Performance comparison with existing robust methods for MFNet dataset. RGB and Thermal columns report performance when only RGB and only Thermal are available. Average column reports average performance when one of the two modalities gets missing. ‘-’ indicates that results for those cells are not published. ∗ indicates that available code and pretrained models from the authors were used to generate the results.</p>
             </div>
         </div>
 
         <div class="row">
 			<div class="col text-center">
-                <img src="./img/nyu.png" style="width:70%" alt="Banner">
-                <p class="text-left"><b>Table 3:</b> Performance comparison with existing robust methods for NYUDv2 dataset. RGB and Depth columns report performance when only RGB and Depth are available. Average column indicates average performance when one of the two modalities gets missing.  * indicates that available codes and pretrained models from the authors were used to generate the results. Other results are from the corresponding papers.</p>
+                <img src="./img/nyu.png" style="width:100%" alt="Banner">
+                <p class="text-left"><b>Table 3:</b> Performance comparison with existing robust methods for NYUDv2 dataset. RGB and Depth columns report performance when only RGB and only Depth are available. Average column indicates average performance when one of the two modalities gets missing. ∗ indicates that available code and pretrained models from the authors were used to generate the results. Other results are from the corresponding papers.</p>
             </div>
         </div>
 
         <div class="row">
 			<div class="col text-center">
-                <img src="./img/comparison-with-other-adaptation.png" style="width:75%" alt="Banner">
+                <img src="./img/comparison-with-other-adaptation.png" style="width:100%" alt="Banner">
                 <p class="text-left"><b>Table 4:</b> Performance comparison (% mIoU) of different parameter-efficient adaptation techniques for MFNet, NYUDv2, and MCubeS datasets. Each column reports mIoU of the Adapted model with the corresponding modalities, and Avg indicates average performance. A and D denote Angle and Degree of Linear Polarization.</p>
             </div>
         </div>
@@ -114,8 +114,41 @@
         <hr>
         <div class="row">
 			<div class="col text-center">
-                <img src="./img/comparison-for-mmsa.png" style="width:70%" alt="Banner">
-                <p class="text-left"><b>Table 5:</b> Performance of Pretrained and Adapted models for multimodal sentiment analysis with CMU-MOSI and CMU-MOSEI datasets. Multimodal Transformer (MulT) as the base model. A, V and T denote audio, video, and text, respectively. &uarr; means higher is better and &darr; means lower is better. The Adapted model outperforms the Pretrained model with missing modalities.</p>
+                <img src="./img/comparison-for-mmsa.png" style="width:100%" alt="Banner">
+                <p class="text-left"><b>Table 5:</b> Comparison of our adaptation technique with existing methods for multimodal sentiment analysis on CMU-MOSI and CMU-MOSEI datasets.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Experiments for Multimodal Action Recognition and Classification</h2>
+        <hr>
+        <div class="row">
+			<div class="col text-center">
+                <div class="imgcontainer">
+                    <figure>
+                        <img src="./img/multimodal-action-recognition.png" style="width:100%" alt="Banner">
+                        <p class="text-left"><b>Table 6:</b> Performance (top-1 accuracy) comparison with existing methods for action recognition on NTU RGB+D dataset. RGB and Depth columns report performance when only RGB and only Depth are available. Avg column indicates average performance. ∗ indicates that available code and pretrained models were used to generate the results.</p>
+                    </figure>
+                    <figure>
+                        <img src="./img/multimodal-classification.png" style="width:100%" alt="Banner">
+                        <p class="text-left"><b>Table 7:</b> Performance (accuracy) comparison with prompting based approach for multimodal classification on UPMC Food-101 dataset. Image and text columns indicate the amount of image and text modality available during both training and testing. † indicates that those values are approximated from the plots published in [27].</p>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Cosine Similarity Analysis</h2>
+        <hr>
+        <div class="row">
+			<div class="col text-center">
+                <div class="imgcontainer">
+                    <img src="./img/mcubes-cosine-similarity.png" style="width:50%" alt="Banner">
+                    <img src="./img/ntu-cosine-similarity.png" style="width:50%" alt="Banner">
+                </div>
+                <p class="text-left"><b>Figure 3:</b> Cosine similarity between complete and missing modality features of the pretrained model (Pretrained) and complete and missing modality features of the adapted model (Adapted) on MCubeS and NTU RGB+D datasets. Adapted models show higher similarity to the complete modality features compared to the pretrained model, indicating less deviation and better handling of missing modalities.</p>
             </div>
         </div>
     </div>
