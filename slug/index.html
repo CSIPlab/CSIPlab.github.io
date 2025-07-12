@@ -184,10 +184,14 @@
       <div class="column is-five-fifths">
         <h2 class="title is-3">Our Method: Single Layer Unlearning Gradient</h2>
           <div class="content has-text-justified">
-            <img src="./assets/project/slug/slug-framework.png"
+            <!-- <img src="./assets/project/slug/slug-framework.png"
                  class="interpolation-image"
-                 alt="Framework image."/>
-            <p>Fig. 1: The unlearning framework of our proposed method, Single Layer Unlearning Gradient (SLUG).</p>
+                 alt="Framework image."/> -->
+            <img src="./assets/project/slug/fig-intro-small.svg"
+                class="interpolation-image"
+                alt="Framework image."/>
+            <div class="columns is-centered has-text-centered">
+              <p>Fig. 1: The unlearning framework of our proposed method, Single Layer Unlearning Gradient (SLUG).</p></div>
             <br>
             <p>
               Given an unlearning query, such as removing an identity like "<i>Elon Musk</i>", 
@@ -219,7 +223,8 @@
             <img src="./assets/project/slug/analyze.png"
                  class="interpolation-image"
                  alt="Teaser image."/>
-            <p>Fig. 2: Pareto-fronts and step-size analysis of one-step update the vision/language parts of CLIP.</p>
+            <div class="columns is-centered has-text-centered">
+            <p>Fig. 2: Pareto-fronts and step-size analysis of one-step update the vision/language parts of CLIP.</p></div>
             <br>
             <p>
               <b>Main takeaway:</b> with a properly selected unlearning step size, one-step update on one of the pareto-optimal layers, 
@@ -253,7 +258,8 @@
                 <input class="slider is-fullwidth is-large is-info"
                       id="interpolation-slider"
                       step="1" min="0" max="100" value="0" type="range">
-                <p>Unlearn "Elon Musk" with different step-sizes</p>
+                <div class="columns is-centered has-text-centered">
+                <p>Unlearn "Elon Musk" with different step-sizes</p></div>
               </div>
               <div class="column is-3 has-text-centered">
                 <img src="./assets/project/stepsize/end_elon.png"
@@ -331,7 +337,8 @@
                 class="interpolation-image"
                 alt="Stable Diffusion example: copyright."/>
             <br>
-            <p>Fig. 6: Unlearning copyright-protected intellectual property ("<i>Mickey Mouse</i>" and "<i>Iron Man</i>") from <a href="https://huggingface.co/stabilityai/stable-diffusion-2-1"> Stable Diffusion-v2.1</a> model.</p>
+            <div class="columns is-centered has-text-centered">
+            <p>Fig. 6: Unlearning copyright-protected intellectual property ("<i>Mickey Mouse</i>" and "<i>Iron Man</i>") from <a href="https://huggingface.co/stabilityai/stable-diffusion-2-1"> Stable Diffusion-v2.1</a> model.</p></div>
             <p>
               After unlearning with SLUG, Stable Diffusion fails to generate images associated with the targeted copyright-protected figures, 
               while the overall image generation utility of the original model is largely preserved.
@@ -344,16 +351,14 @@
             <img src="./assets/project/slug/vlm-example-1.png"
                 class="interpolation-image"
                 alt="Vision-Language Model."/>
-                <p>
-                  Fig. 7: Unlearning the celebrity example "<i>Elon Musk</i>" from <a href="https://huggingface.co/llava-hf/llava-1.5-7b-hf"> LLaVA-v1.5-7B </a> model.
-                </p>                
+                <div class="columns is-centered has-text-centered">
+                <p>Fig. 7: Unlearning the celebrity example "<i>Elon Musk</i>" from <a href="https://huggingface.co/llava-hf/llava-1.5-7b-hf"> LLaVA-v1.5-7B </a> model.</p></div>
             <br>
             <img src="./assets/project/slug/vlm-example-2.png"
                 class="interpolation-image"
                 alt="Vision-Language Model."/>
-                <p>
-                  Fig. 8: Unlearning the celebrity example  "<i>Taylor Swift</i>" from <a href="https://huggingface.co/llava-hf/llava-1.5-7b-hf"> LLaVA-v1.5-7B </a> model.
-                </p>
+                <div class="columns is-centered has-text-centered">
+                  <p>Fig. 8: Unlearning the celebrity example  "<i>Taylor Swift</i>" from <a href="https://huggingface.co/llava-hf/llava-1.5-7b-hf"> LLaVA-v1.5-7B </a> model.</p></div>
             <p>
               While targeted identities are mapped to wrong name or gender after the unlearning, 
               the other celebrities identification remain unaffected. 
