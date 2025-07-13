@@ -47,8 +47,8 @@
         <div class="column has-text-centered">
           <h1 class="title is-2 publication-title">Targeted Unlearning with Single Layer Unlearning Gradient</h1>
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><a href="https://zikuicai.github.io/">Zikui Cai</a><sup>1,2</sup>,</span>
-            <span class="author-block"><a href="https://ytengtan.github.io/">Yaoteng Tan</a><sup>1</sup>,</span>
+            <span class="author-block"><sup>*</sup><a href="https://zikuicai.github.io/">Zikui Cai</a><sup>1,2</sup>,</span>
+            <span class="author-block"><sup>*</sup><a href="https://ytengtan.github.io/">Yaoteng Tan</a><sup>1</sup>,</span>
             <span class="author-block"><a href="https://intra.ece.ucr.edu/~sasif/">M. Salman Asif</a><sup>1</sup></span>
           </div>
 
@@ -57,13 +57,13 @@
             <span class="author-block"><sup>2</sup>University of Maryland, College Park</span>
           </div>
           
-          <!-- <div class="is-size-6 publication-authors">
+          <div class="is-size-6 publication-authors">
             <span class="author-block">
-              <sup>*</sup>Equal contribution; 
-              <sup>⚑</sup>Project lead; 
-              <sup>†</sup>Corresponding authors.
+              <sup>*</sup>Equal contribution 
+              <!-- <sup>⚑</sup>Project lead; 
+              <sup>†</sup>Corresponding authors. -->
             </span>
-          </div> -->
+          </div>
 
         </div>
       </div>
@@ -101,16 +101,28 @@
             </a>
           </span>
           
+          <!-- Poster Link. -->
+          <span class="link-block">
+            <a href="https://icml.cc/media/PosterPDFs/ICML%202025/46379.png?t=1750963502.1914573"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fa fa-image"></i>
+                </span>
+              <span>Poster</span>
+            </a>
+          </span>  
+
+
           <!-- Demo Link. -->
           <span class="link-block">
             <a href="https://colab.research.google.com/drive/1sjLWKPIXi961KPV-t1ugIdwaF7bdBjt7?usp=sharing"
                 class="external-link button is-normal is-rounded is-dark">
                 <span class="icon">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" alt="colab Logo">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/archive/d/d0/20221103151430%21Google_Colaboratory_SVG_Logo.svg" alt="colab Logo">
                 </span>
               <span>Demo</span>
             </a>
-          </span>
+          </span>        
 
         </div>
       </div>
@@ -146,7 +158,7 @@
 </section>
 
 
-<section class="section hero is-light">
+<!-- <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-five-fifths">
@@ -175,14 +187,18 @@
           </div>
       </div>
     </div>
-</section>
+</section> -->
 
 
 <section class="section hero">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-five-fifths">
-        <h2 class="title is-3">Our Method: Single Layer Unlearning Gradient</h2>
+          <h2 class="title is-3">
+            Single Layer Unlearning Gradient (SLUG
+            <img src="assets/slug_icon.png" alt="slug icon" style="height: 1em; vertical-align: middle;">
+            )
+          </h2>
           <div class="content has-text-justified">
             <img src="./assets/project/slug/slug-framework.svg"
                 class="interpolation-image"
@@ -282,7 +298,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-five-fifths">
-        <h2 class="title is-3">Main Results</h2>
+        <h2 class="title is-3">Sample Results</h2>
           <div class="content has-text-justified">
             Despite being extremely efficient, SLUG achieves effective unlearning while maintaining a good balance with model utility retention.
             Besides, SLUG is scalable across different foundation models for different tasks (e.g., CLIP, Stable Diffusion, VLMs) 
