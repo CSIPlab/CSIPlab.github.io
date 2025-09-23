@@ -2,109 +2,181 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Computational Sensing and Information Processing Lab">
+    <meta name="description" content="Computational Sensing and Information Processing Lab at UC Riverside. Research in computational imaging and machine learning.">
     <meta name="author" content="M. Salman Asif">
 
-    <title>CSIPlab, UCR</title>
-    <!-- Bootstrap core CSS -->
-    <!--link href="bootstrap.min.css" rel="stylesheet"-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>CSIPLab | Computational Sensing and Information Processing Lab, UCR</title>
 
-    <!-- Custom styles for this template -->
-    <link href="offcanvas.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="src/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .hero-section {
+            background: linear-gradient(45deg, #007bff, #6610f2);
+            color: white;
+            padding: 4rem 0;
+        }
+        .hero-section h1 {
+            font-weight: 700;
+        }
+        .hero-section a {
+            color: #fff;
+            text-decoration: underline;
+        }
+        .project-section h2 {
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: #343a40;
+        }
+        .project-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            height: 100%; /* Ensures all cards in a row have the same height */
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        .project-card .card-img-top {
+            width: 100%;
+            aspect-ratio: 16 / 9; /* Enforces a consistent aspect ratio */
+            object-fit: cover; /* Ensures image covers the area without distortion */
+            border-bottom: 1px solid #eee;
+        }
+        .project-card .card-body {
+            flex-grow: 1; /* Allows the body to fill available space */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .project-card .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        .project-card .card-text {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        .project-card .venue-text {
+            font-style: italic;
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .footer {
+            background-color: #343a40;
+            color: #f8f9fa;
+            padding: 2rem 0;
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="jumbotron jumbotron-fluid">
-    <div class="container"></div>
-    <h2>Computational Sensing and Information Processing Lab</h2>
-        <p class="abstract"><b>Computational Imaging and Machine Learning Research group at UCR</b></p>
-    <hr>
-    <p class="authors">
-        <a href="https://intra.ece.ucr.edu/~sasif/" target="_blank"> M. Salman Asif</a>
-    </p>
-    <p>
-        <a>University of California Riverside, CA, USA</a></br>
-    </p>
-
-    <div>
-        <a class="btn btn-primary" href="https://github.com/CSIPlab" target="_blank">GitHub</a>
+<header class="hero-section text-center">
+    <div class="container">
+        <h1 class="display-5">Computational Sensing and Information Processing Lab</h1>
+        <p class="lead">A Computational Imaging and Machine Learning Research Group at UC Riverside</p>
+        <p>
+            Directed by: <a href="https://intra.ece.ucr.edu/~sasif/" target="_blank"><strong>M. Salman Asif</strong></a>
+        </p>
+        <a class="btn btn-primary mt-3" href="https://github.com/CSIPlab" target="_blank">
+            <i class="fab fa-github"></i> View on GitHub
+        </a>
     </div>
-</div>
+</header>
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="card">
-                <img class="card-img-top p-4" src="./icip2025_multimodal/img/mml-tutorial.png" alt="Foundations and Recent Trends in Robust Multimodal Learning">
+<main class="container my-5 project-section">
+    <h2 class="text-center">Our Research Projects</h2>
+    
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        
+        <div class="col">
+            <div class="card project-card">
+                <img src="./icip2025_multimodal/img/mml-tutorial.png" class="card-img-top" alt="Robust Multimodal Learning Tutorial">
                 <div class="card-body text-center">
-                  <h5 class="card-title">Foundations and Recent Trends in Robust Multimodal Learning</h5>
-                  <p class="card-text">M. Salman Asif, Md Kaykobad Reza</p>
-                  <a href="icip2025_multimodal/" class="btn btn-primary text-center">Details</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card">
-                <img class="card-img-top p-4" src="./MMSFormer/img/MMSFormer-min.png" alt="MMSFormer: Multimodal Transformer for Material and Semantic Segmentation">
-                <div class="card-body text-center">
-                  <h5 class="card-title">MMSFormer: Multimodal Transformer for Material and Semantic Segmentation</h5>
-                  <p class="card-text">Md Kaykobad Reza, Ashley Prater-Bennette, and M. Salman Asif</p>
-                  <a href="MMSFormer/" class="btn btn-primary text-center">Details</a>
-                </div>
-            </div>
-        </div>
-    </div>
-      
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="card">
-                <img class="card-img-top p-3" src="./Missing-Modality-Adaptation/img/ssf-final.png" alt="Robust Multimodal Learning with Missing Modalities via Parameter-Efficient Adaptation">
-                <div class="card-body text-center">
-                  <h5 class="card-title">Robust Multimodal Learning with Missing Modalities via Parameter-Efficient Adaptation</h5>
-                  <p class="card-text">Md Kaykobad Reza, Ashley Prater-Bennette, and M. Salman Asif</p>
-                  <a href="Missing-Modality-Adaptation/" class="btn btn-primary">Details</a>
+                    <div>
+                        <h5 class="card-title">Foundations and Recent Trends in Robust Multimodal Learning</h5>
+                        <p class="card-text">M. Salman Asif, Md Kaykobad Reza</p>
+                        <p class="venue-text">ICIP 2025 Tutorial</p>
+                    </div>
+                    <a href="icip2025_multimodal/" class="btn btn-primary">Details</a>
                 </div>
             </div>
         </div>
 
-        <div class="col-sm-6">
-            <div class="card">
-                <img class="card-img-top p-2" src="./slug/assets/project/slug/slug-framework.svg" alt="SLUG" >
+        <div class="col">
+            <div class="card project-card">
+                <img src="./MMSFormer/img/MMSFormer-min.png" class="card-img-top" alt="MMSFormer Project">
                 <div class="card-body text-center">
-                <h5 class="card-title">Targeted Unlearning with Single Layer Unlearning Gradient</h5>
-                <p class="card-text">Zikui Cai, Yaoteng Tan, M. Salman Asif</p>
-                <a href="slug/" class="btn btn-primary text-center">Details</a>
+                    <div>
+                        <h5 class="card-title">MMSFormer: Multimodal Transformer for Material and Semantic Segmentation</h5>
+                        <p class="card-text">Md Kaykobad Reza, Ashley Prater-Bennette, and M. Salman Asif</p>
+                        <p class="venue-text">IEEE Open Journal of Signal Processing (OJSP) 2024</p>
+                    </div>
+                    <a href="MMSFormer/" class="btn btn-primary">Details</a>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="card">
-                <img class="card-img-top p-2" src="./DomainExpansionInverseProblems/static/images/intro_figure.png" alt="Domain Expansion via Network Adaptation" >
+        
+        <div class="col">
+            <div class="card project-card">
+                <img src="./Missing-Modality-Adaptation/img/ssf-final.png" class="card-img-top" alt="Missing Modalities Adaptation Project">
                 <div class="card-body text-center">
-                <h5 class="card-title">Domain Expansion via Network Adaptation for Solving Inverse Problems</h5>
-                <p class="card-text">Nebiyou Yismaw, Ulugbek S. Kamilov, M. Salman Asif</p>
-                <a href="DomainExpansionInverseProblems/" class="btn btn-primary text-center">Details</a>
+                    <div>
+                        <h5 class="card-title">Robust Multimodal Learning with Missing Modalities via Parameter-Efficient Adaptation</h5>
+                        <p class="card-text">Md Kaykobad Reza, Ashley Prater-Bennette, and M. Salman Asif</p>
+                        <p class="venue-text">IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) 2024</p>
+                    </div>
+                    <a href="Missing-Modality-Adaptation/" class="btn btn-primary">Details</a>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
-<hr>
-<div class="container text-center">
-    <div>
-        <p>Copyright &copy; 2023: Computational Sensing and Information Processing Lab, UCR</p>
+        <div class="col">
+            <div class="card project-card">
+                <img src="./slug/assets/project/slug/slug-framework.svg" class="card-img-top" alt="SLUG Project">
+                <div class="card-body text-center">
+                    <div>
+                        <h5 class="card-title">Targeted Unlearning with Single Layer Unlearning Gradient</h5>
+                        <p class="card-text">Zikui Cai, Yaoteng Tan, M. Salman Asif</p>
+                        <p class="venue-text">International Conference on Machine Learning (ICML) 2025</p>
+                    </div>
+                    <a href="slug/" class="btn btn-primary">Details</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card project-card">
+                <img src="./DomainExpansionInverseProblems/static/images/intro_figure.png" class="card-img-top" alt="Domain Expansion Project">
+                <div class="card-body text-center">
+                    <div>
+                        <h5 class="card-title">Domain Expansion via Network Adaptation for Solving Inverse Problems</h5>
+                        <p class="card-text">Nebiyou Yismaw, Ulugbek S. Kamilov, M. Salman Asif</p>
+                        <p class="venue-text">IEEE Transactions on Computational Imaging (TCI) 2024</p>
+                    </div>
+                    <a href="DomainExpansionInverseProblems/" class="btn btn-primary">Details</a>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+</main>
+
+<footer class="footer text-center">
+    <div class="container">
+        <p>&copy; 2023 - 2025 | Computational Sensing and Information Processing Lab, University of California, Riverside</p>
     </div>
-</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
 </html>
