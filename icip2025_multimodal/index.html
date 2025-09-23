@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Official page for the ICIP 2025 tutorial on Foundations and Recent Trends in Robust Multimodal Learning. Access slides and learn about data fusion, transformers, robustness, and future directions.">
+    <meta name="author" content="M. Salman Asif, Md Kaykobad Reza">
+    <meta name="keywords" content="multimodal learning, robust AI, ICIP 2025, data fusion, transformers, computer vision, signal processing, M. Salman Asif, Md Kaykobad Reza">
+    <meta name="author" content="M. Salman Asif, Md Kaykobad Reza">
+
+    <title>Foundations and Recent Trends in Robust Multimodal Learning | ICIP 2025</title>
+    <!-- Bootstrap core CSS -->
+    <!--link href="bootstrap.min.css" rel="stylesheet"-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="offcanvas.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="src/css/style.css">
+    <style>
+        .pdf-viewer {
+            width: 100%;
+            height: 800px;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+        /* .container h2 {
+            margin-top: 2rem;
+        } */
+        .container h3 {
+            margin-top: 1.5rem;
+        }
+        .references-list {
+            list-style-type: decimal;
+            padding-left: 20px;
+        }
+        .references-list li {
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": "Foundations and Recent Trends in Robust Multimodal Learning",
+      "description": "A comprehensive tutorial on robust multimodal learning, covering foundations, recent advancements, and future challenges. Topics include data fusion, alignment, representation, robustness to missing modalities, and large multimodal models.",
+      "author": [
+        {
+          "@type": "Person",
+          "name": "M. Salman Asif",
+          "url": "https://intra.ece.ucr.edu/~sasif/",
+          "affiliation": {
+            "@type": "Organization",
+            "name": "University of California, Riverside"
+          }
+        },
+        {
+          "@type": "Person",
+          "name": "Md Kaykobad Reza",
+          "url": "https://kaykobad.github.io/",
+          "affiliation": {
+            "@type": "Organization",
+            "name": "University of California, Riverside"
+          }
+        }
+      ],
+      "isPartOf": {
+        "@type": "Event",
+        "name": "IEEE International Conference on Image Processing (ICIP) 2025",
+        "description": "Tutorial Session at ICIP 2025"
+      },
+      "datePublished": "2025-09-23"
+    }
+    </script>
+</head>
+
+<body>
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1>Foundations and Recent Trends in Robust Multimodal Learning</h1>
+        <p class="lead">A Tutorial at the IEEE International Conference on Image Processing (ICIP) 2025</p>
+        <hr>
+        <p class="authors">
+            <a href="https://intra.ece.ucr.edu/~sasif/" target="_blank"> M. Salman Asif</a>,
+            <a href="https://kaykobad.github.io/" target="_blank">Md Kaykobad Reza</a>
+        </p>
+        <p>
+            <a>University of California Riverside, CA, USA</a><br>
+        </p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="section">
+        <h2>Summary</h2>
+        <hr>
+        <p>
+            This tutorial provides a comprehensive overview of robust multimodal learning, encompassing both foundational concepts and recent advancements. Its primary aim is to present the presenters’ perspective on this broad field, with a particular emphasis on underlying architectures and models rather than solely on performance analysis. The material is drawn from a wide range of academic papers, blogs, and other resources.
+            
+            The tutorial begins with an introduction to the fundamentals of multimodal learning, including data fusion, alignment, and representation learning. It then examines the challenges of ensuring robustness, especially in scenarios involving missing, unaligned, or noisy data. Following this, recent trends in multimodal learning and their applications are discussed. The session concludes with open questions and potential directions for future research.
+            <!-- This tutorial provides a comprehensive overview of robust multimodal learning, covering foundational concepts and recent advancements. The goal is to offer the presenters' perspective on this broad field, focusing on the underlying architectures and models rather than just performance analysis. The material is sourced from a variety of academic papers, blogs, and other resources. The tutorial is structured to first introduce the fundamentals of multimodal learning, including data fusion, alignment, and representation learning. It then dives into the challenges of achieving robustness, particularly in scenarios with missing, unaligned, or noisy data. Then it discusses recent trends in multimodal learning and its' applications. Finally open questions and future research directions in the field. -->
+        </p>
+        <!-- <hr> -->
+    </div>
+
+    <div class="section">
+        <h2>Index of Topics</h2>
+        <hr>
+        <h3>Part 1: Introduction to Multimodal Learning</h3>
+        <ul>
+            <li><strong>Definition and Core Concepts</strong></li>
+            <li><strong>Applications</strong>
+                <ul>
+                    <li>Autonomous Vehicles</li>
+                    <li>Medical Imaging</li>
+                    <li>Remote Sensing</li>
+                    <li>Activity Recognition</li>
+                    <li>Image/Video Captioning and Visual Question Answering (VQA)</li>
+                    <li>Text-to-Image/Video/Audio Generation</li>
+                </ul>
+            </li>
+            <li><strong>General Architecture of Multimodal Models</strong></li>
+        </ul>
+
+        <h3>Part 2: Fundamentals of Multimodal Learning</h3>
+        <ul>
+            <li><strong>Core Tasks:</strong> Fusion, Alignment, and Representation Learning</li>
+            <li><strong>Multimodal Data Fusion</strong>
+                <ul>
+                    <li>Strategies: Early, Late, and Intermediate Fusion</li>
+                    <li>Architectures: Convolutional Networks (ConvNets) and Transformers</li>
+                </ul>
+            </li>
+            <li><strong>Multimodal Alignment and Representation</strong>
+                <ul>
+                    <li>Techniques: Contrastive Learning (e.g., CLIP)</li>
+                    <li>Models: VideoBERT, ViLBERT, VATT, MaMMUT, ImageBind, Meta-Transformer</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Part 3: Challenges in Robust Multimodal Learning</h3>
+        <ul>
+            <li><strong>Missing or Incomplete Data</strong>
+                <ul>
+                    <li>Effects of Missing Modalities</li>
+                    <li>Handling Missing Data: Robust Model Design, Model Adaptation, and Prompt Tuning</li>
+                </ul>
+            </li>
+            <li><strong>Noisy and Unaligned Modalities</strong>
+                <ul>
+                    <li>Approaches: Data-level, Model-level, and Representation Alignment</li>
+                </ul>
+            </li>
+            <li><strong>Privacy and Safety Alignment</strong>
+                <ul>
+                    <li>Model Editing and Safety Alignment Concepts</li>
+                    <li>Approaches: LlavaGuard and Textual Unlearning</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Part 4: Recent Advances & Applications</h3>
+        <ul>
+            <li><strong>Timeline of Large Multimodal Model Development</strong></li>
+            <li><strong>Key Models and Architectures</strong>
+                <ul>
+                    <li>Vision-Language: Flamingo, LLaVA</li>
+                    <li>Audio-Language: Whisper</li>
+                    <li>Sensor Data Models: LLaSA, SensorLM</li>
+                    <li>Omni-Modal Models: OneLLM, NExTGPT</li>
+                    <li>Generative Models: Stable Diffusion 3.5 (Text-to-Image), Veo (Text-to-Video), Segment Anything 2 (Segmentation)</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Part 5: Open Problems & Future Directions</h3>
+        <ul>
+            <li><strong>Key Research Areas</strong>
+                <ul>
+                    <li>Lack of Theoretical Foundations</li>
+                    <li>Interpretability and Explainability</li>
+                    <li>Adaptive and Cost-Efficient Learning</li>
+                    <li>Fair & Balanced Multimodality</li>
+                </ul>
+            </li>
+        </ul>
+        
+        <!-- <hr> -->
+    </div>
+
+    <div class="section">
+        <h2>Tutorial Slides</h2>
+        <hr>
+        <div class="pdf-viewer">
+            <iframe src="https://drive.google.com/file/d/1Dsi6lD16aTycYW1cPNdJHA-FubWKx7WX/preview" width="100%" height="100%"></iframe>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>References</h2>
+        <hr>
+        <ol class="references-list">
+            <li>Reza, Md Kaykobad, Ashley Prater-Bennette, and M. Salman Asif. "Robust multimodal learning with missing modalities via parameter-efficient adaptation." IEEE TPAMI (2024).</li>
+            <li>Reza, Md Kaykobad, Ashley Prater-Bennette, and M. Salman Asif. "Mmsformer: Multimodal transformer for material and semantic segmentation." IEEE Open Journal of Signal Processing 5 (2024): 599-610.</li>
+            <li>Reza, Md Kaykobad, et al. "Robust Multimodal Learning via Cross-Modal Proxy Tokens." arXiv:2501.17823.</li>
+            <li>Zhang, Yiyuan, et al. "Meta-transformer: A unified framework for multimodal learning." arXiv:2307.10802.</li>
+            <li>Vaswani, Ashish, et al. "Attention is all you need." NeurIPS 2017.</li>
+            <li>Dosovitskiy, Alexey, et al. "An image is worth 16x16 words: Transformers for image recognition at scale." arXiv:2010.11929.</li>
+            <li>Kim, Wonjae et al. "Vilt: Vision-and-language transformer without convolution or region supervision." ICML 2021.</li>
+            <li>Radford, Alec, et al. "Learning transferable visual models from natural language supervision." ICML 2021.</li>
+            <li>Girdhar, Rohit, et al. "Imagebind: One embedding space to bind them all." CVPR 2023.</li>
+            <li>Wang, Hu, et al. "Multi-modal learning with missing modality via shared-specific feature modelling." CVPR 2023.</li>
+            <li>Cai, Zikui, Yaoteng Tan, M. Salman Asif. "Targeted Unlearning with Single Layer Unlearning Gradient." ICML 2025.</li>
+            <li>Chakraborty, T., et al. "Can Textual Unlearning Solve Cross-Modality Safety Alignment?." EMNLP Findings 2024.</li>
+            <li>Alayrac, Jean-Baptiste, et al. "Flamingo: a visual language model for few-shot learning." NeurIPS 2022.</li>
+            <li>Liu, Haotian, et al. "Visual instruction tuning." NeurIPS 2023.</li>
+            <li>Radford, Alec, et al. "Robust speech recognition via large-scale weak supervision." ICML 2023.</li>
+            <li>Han, Jiaming, et al. "Onellm: One framework to align all modalities with language." CVPR 2024.</li>
+            <li>Wu, Shengqiong, et al. "Next-gpt: Any-to-any multimodal llm." ICML 2024.</li>
+            <li>Imran, Sheikh Asif, et al. "Llasa: A multimodal llm for human activity analysis through wearable and smartphone sensors." arXiv:2406.14498.</li>
+            <li>Zhang, Yuwei, et al. "SensorLM: Learning the Language of Wearable Sensors." arXiv:2506.09108.</li>
+            <li>Lee, Yi-Lun, et al. "Multimodal prompting with missing modalities for visual recognition." CVPR 2023.</li>
+            <li>Li, Junnan, et al. "Align before fuse: Vision and language representation learning with momentum distillation." NeurIPS 2021.</li>
+            <li>MMML Tutorials: https://cmu-multicomp-lab.github.io/mmml-tutorial/icml2023/</li>
+            <li>Based on insights from IBM Research, CMU MultiComp Lab, and Wikipedia.</li>
+        </ol>
+    </div>
+
+</div>
+
+</body>
+</html>
