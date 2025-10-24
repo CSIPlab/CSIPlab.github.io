@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Robust Multimodal Learning via Cross-Modal Proxy Tokens">
+    <meta name="author" content="Md Kaykobad Reza, Ameya Patil, Mashhour Solh, M. Salman Asif">
+
+    <title>Robust Multimodal Learning via Cross-Modal Proxy Tokens</title>
+    <!-- Bootstrap core CSS -->
+    <!--link href="bootstrap.min.css" rel="stylesheet"-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="offcanvas.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="src/css/style.css">
+</head>
+
+<body>
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container"></div>
+    <h2>Robust Multimodal Learning via</h2>
+    <h2>Cross-Modal Proxy Tokens</h2>
+        <p class="abstract"><b>To enhance missing modality robustness of multimodal models</b></p>
+    <hr>
+    <p class="authors">
+        <a href="https://kaykobad.github.io/" target="_blank">Md Kaykobad Reza<sup> 1</sup></a>,
+        <a href="https://scholar.google.com/citations?user=tCjPO0oAAAAJ&hl=en" target="_blank">Ameya Patil<sup> 2</sup></a>,
+        <a href="https://scholar.google.com/citations?user=_2uT_RAAAAAJ&hl=en" target="_blank">Mashhour Solh<sup> 2</sup></a>, and
+        <a href="https://intra.ece.ucr.edu/~sasif/" target="_blank"> M. Salman Asif<sup> 1</sup></a>
+    </p>
+    <p>
+        <a><sup>1</sup> University of California Riverside, CA, USA</a></br>
+        <a><sup>2</sup> Amazon, CA, USA</a></br>
+    </p>
+
+    <div>
+        <a class="btn btn-primary" href="https://openreview.net/forum?id=Wtc6wvcYJ0" target="_blank">Paper (Open Review)</a> 
+        <a class="btn btn-primary" href="https://arxiv.org/abs/2501.17823" target="_blank">Paper (arXiv)</a> 
+        <a class="btn btn-primary" href="https://github.com/CSIPlab/Cross-Modal-Proxy-Tokens" target="_blank">Code (GitHub)</a>
+        <a class="btn btn-primary" href="https://csiplab.github.io/cross-modal-proxy-tokens/">Webpage</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="section">
+        <h2>Abstract</h2>
+        <hr>
+        <p>Multimodal models often experience a significant performance drop when one or more modalities are missing during inference. To address this challenge, we propose a simple yet effective approach that enhances robustness to missing modalities while maintaining strong performance when all modalities are available. Our method introduces cross-modal proxy tokens (CMPTs), which approximate the class token of a missing modality by attending only to the tokens of the available modality without requiring explicit modality generation or auxiliary networks. To efficiently learn these approximations with minimal computational overhead, we employ low-rank adapters in frozen unimodal encoders and jointly optimize an alignment loss with a task-specific loss. Extensive experiments on five multimodal datasets show that our method outperforms state-of-the-art baselines across various missing rates while achieving competitive results in complete-modality settings. Overall, our method offers a flexible and efficient solution for robust multimodal learning.</p>
+        <br>
+
+        <div class="row">
+            <div class="col text-center">
+                <img src="./img/model-diagram-4.png" style="width:85%" alt="Banner">
+                <p class="text-left"><b>Figure 1:</b> We introduce Cross-Modal Proxy Tokens (CMPTs), a novel approach to address missing modality challenges. CMPTs effectively learn to approximate missing modality class tokens by adapting pretrained encoders through a joint optimization of alignment and task-specific objectives. Our approach accommodates both complete and missing modalities during training and inference, thereby enhancing robustness across varying missing modality scenarios.</p>
+            </div>
+        </div>
+
+        <!-- <video width="100%" height="400" controls="True" preload="none" loop muted autoplay = 'autoplay' playsInline>
+            <source type="video/mp4" src="img/Presentation1.mov" />
+            <source type="video/webm" src="img/video1.webm" />
+        </video> -->
+    </div>
+
+
+    <!-- <div class="section">
+        <h2>Comparison with Current State of the Art Models</h2>
+        <hr>
+
+        <div class="row">
+			<div class="col text-center">
+                <img src="./img/fmb-mcubes.jpeg" style="width:90%" alt="Banner">
+                <p class="text-left"><b>Table 1:</b> performance comparison on FMB (left) and MCubeS (right) datasets. Here A, D, and N represent angle of linear polarization (AoLP), degree of linear polarization (DoLP), and near-infrared (NIR)  respectively.</p>
+            </div>
+        </div>
+
+        <div class="row">
+			<div class="col text-center">
+                <img src="./img/visualization-with-sota-min.png" style="width:85%" alt="Banner">
+                <p class="text-left"><b>Figure 2:</b> Visualization of predictions on MCubeS and PST900 datasets. Figure 2(a) shows RGB and all modalities (RGB-A-D-N) prediction from CMNeXt and our model on MCubeS dataset. For brevity, we only show the RGB image and ground truth material segmentation maps along with the predictions. Figure 2(b) shows predictions from RTFNet, FDCNet and our model for RGB-thermal input modalities on PST900 dataset. Our model shows better predictions on both of the datasets.</p>
+            </div>
+        </div>
+
+        <div class="row">
+			<div class="col text-center">
+                <img src="./img/mcubes-per-class-sota-min.png" style="width:100%" alt="Banner">
+                <p class="text-left"><b>Table 2:</b> Per-class % IoU comparison on MCubeS dataset. Our proposed MMSFormer model shows better performance in detecting most of the classes compared to the current state-of-the-art models. ∗ indicates that the code and pretrained model from the authors were used to generate the results.</p>
+            </div>
+        </div>
+
+        <div class="row">
+			<div class="col text-center">
+                <img src="./img/FMB-performance-min.png" style="width:100%" alt="Banner">
+                <p class="text-left"><b>Table 3:</b> Per-class % IoU comparison on FMB dataset for both RGB only and RGB-infrared modalities. We show the comparison for 8 classes (out of 14) that are published. T-Lamp and T-Sign stand for Traffic Lamp and Traffic Sign respectively. Our model outperforms all the methods for all the classes except for the truck class.</p>
+            </div>
+        </div>
+
+        <div class="row">
+			<div class="col text-center">
+                <img src="./img/PST-performance-min.png" style="width:100%" alt="Banner">
+                <p class="text-left"><b>Table 4:</b> Performance comparison on PST900 dataset. We show per-class % IoU as well as % mIoU for all the classes.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Effect of Adding Different Modalities</h2>
+        <hr>
+        <div class="row">
+			<div class="col text-center">
+                <img src="./img/mcubes-per-class-modality-combination-min.png" style="width:100%" alt="Banner">
+                <p class="text-left"><b>Table 5:</b> Per class % IoU comparison on Multimodal Material Segmentation (MCubeS) dataset for different modality combinations. As we add modalities incrementally, overall performance increases gradually. This table also shows that specific modality combinations assist in identifying specific types of materials better.</p>
+            </div>
+        </div>
+
+        <div class="row">
+			<div class="col text-center">
+                <img src="./img/visualization-modality-combination-min.png" style="width:85%" alt="Banner">
+                <p class="text-left"><b>Figure 3:</b> Visualization of predicted segmentation maps for different modality combinations on MCubeS and FMB datasets. Both figures show that prediction accuracy increases as we incrementally add new modalities. They also illustrate the fusion block’s ability to effectively combine information from different modality combinations.</p>
+            </div>
+        </div>
+    </div> -->
+
+    
+    <!-- <div class="section">
+        <h2>Paper</h2>
+        <hr>
+        <div>
+            <div class="list-group">
+                <a href="https://arxiv.org/abs/2501.17823"
+                   class="list-group-item">
+                    <img src="img/paper.jpeg" style="width:100%; margin-right:-20px; margin-top:-10px;">
+                </a>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="section">
+        <h2>Bibtex</h2>
+        <hr>
+        <div class="bibtexsection">
+  @article{reza2025robust,
+    title={Robust Multimodal Learning via Cross-Modal Proxy Tokens},
+    author={Reza, Md Kaykobad and Patil, Ameya and Solh, Mashhour and Asif, M Salman},
+    journal={arXiv preprint arXiv:2501.17823},
+    year={2025}
+  }
+        </div>
+    </div>
+
+    <hr>
+</div>
+
+</body>
+</html>
