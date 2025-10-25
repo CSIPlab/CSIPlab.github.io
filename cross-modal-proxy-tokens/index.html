@@ -24,7 +24,7 @@
     <div class="container"></div>
     <h2>Robust Multimodal Learning via</h2>
     <h2>Cross-Modal Proxy Tokens</h2>
-        <p class="abstract"><b>To enhance missing modality robustness of multimodal models</b></p>
+        <p class="abstract"><b>Learning to approximate missing modality features efficiently</b></p>
     <hr>
     <p class="authors">
         <a href="https://kaykobad.github.io/" target="_blank">Md Kaykobad Reza<sup> 1</sup></a>,
@@ -54,8 +54,13 @@
 
         <div class="row">
             <div class="col text-center">
-                <img src="./img/model-diagram-4.png" style="width:85%" alt="Banner">
-                <p class="text-left"><b>Figure 1:</b> We introduce Cross-Modal Proxy Tokens (CMPTs), a novel approach to address missing modality challenges. CMPTs effectively learn to approximate missing modality class tokens by adapting pretrained encoders through a joint optimization of alignment and task-specific objectives. Our approach accommodates both complete and missing modalities during training and inference, thereby enhancing robustness across varying missing modality scenarios.</p>
+                <img src="./img/model-cmpt.png" style="width:90%" alt="Banner">
+                <p class="text-left"><b>Figure 1:</b> (a) We introduce Cross-Modal Proxy Tokens (CMPTs), a novel approach to address missing modality
+                challenges. CMPTs effectively learn to approximate missing modality class tokens by adapting pretrained encoders
+                through a joint optimization of alignment and task-specific objectives. Our approach accommodates both complete
+                and missing modalities during training and inference, thereby enhancing robustness across varying missing modality
+                scenarios. (b) CMPTs achieve state-of-the-art performance, consistently outperforming recent baseline methods in
+                both complete and missing modality scenarios. The radar plot illustrates F1-macro scores on the MM-IMDb dataset across varying modality availability.</p>
             </div>
         </div>
 
@@ -65,78 +70,78 @@
         </video> -->
     </div>
 
-
-    <!-- <div class="section">
-        <h2>Comparison with Current State of the Art Models</h2>
+     <!-- CONTRIBUTIONS -->
+    <div class="section">
+        <h2>Contributions</h2>
         <hr>
+        <ul>
+        <li>Introduced <b>Cross-Modal Proxy Tokens (CMPTs)</b> to approximate the class token of the missing modality from the available modality.</li>
+        <li>Used <b>rank-1 Low-Rank Adapters (LoRA)</b> for efficient adaptation of frozen unimodal encoders.</li>
+        <li>Achieved <b>state-of-the-art robustness</b> across five datasets and 12 baselines under different missing-modality conditions.</li>
+        <li>Maintained <b>competitive or superior performance</b> when all modalities are available.</li>
+        <li>Demonstrated <b>class-level improvements</b> and better generalization to unseen missing scenarios during inference.</li>
+        </ul>
+    </div>
 
-        <div class="row">
-			<div class="col text-center">
-                <img src="./img/fmb-mcubes.jpeg" style="width:90%" alt="Banner">
-                <p class="text-left"><b>Table 1:</b> performance comparison on FMB (left) and MCubeS (right) datasets. Here A, D, and N represent angle of linear polarization (AoLP), degree of linear polarization (DoLP), and near-infrared (NIR)  respectively.</p>
-            </div>
+    <!-- RESULTS -->
+    <div class="section">
+        <h2>Key Results</h2>
+        <hr>
+        <div class="row text-center">
+        <div class="col-md-12">
+            <img src="./img/table1.png" style="width:90%" alt="Performance under missing modalities">
+            <p class="text-left"><b>Table 1:</b> CMPTs outperform existing baselines across various missing-modality configurations on MM-IMDb and UPMC Food-101 datasets.</p>
         </div>
-
-        <div class="row">
-			<div class="col text-center">
-                <img src="./img/visualization-with-sota-min.png" style="width:85%" alt="Banner">
-                <p class="text-left"><b>Figure 2:</b> Visualization of predictions on MCubeS and PST900 datasets. Figure 2(a) shows RGB and all modalities (RGB-A-D-N) prediction from CMNeXt and our model on MCubeS dataset. For brevity, we only show the RGB image and ground truth material segmentation maps along with the predictions. Figure 2(b) shows predictions from RTFNet, FDCNet and our model for RGB-thermal input modalities on PST900 dataset. Our model shows better predictions on both of the datasets.</p>
-            </div>
+        <div class="col-md-12">
+            <img src="./img/table11.png" style="width:90%" alt="Performance with all modalities">
+            <p class="text-left"><b>Tables 2:</b> CMPTs outperform existing baselines even when a complete modality gets missing during inference.</p>
         </div>
-
-        <div class="row">
-			<div class="col text-center">
-                <img src="./img/mcubes-per-class-sota-min.png" style="width:100%" alt="Banner">
-                <p class="text-left"><b>Table 2:</b> Per-class % IoU comparison on MCubeS dataset. Our proposed MMSFormer model shows better performance in detecting most of the classes compared to the current state-of-the-art models. ∗ indicates that the code and pretrained model from the authors were used to generate the results.</p>
-            </div>
-        </div>
-
-        <div class="row">
-			<div class="col text-center">
-                <img src="./img/FMB-performance-min.png" style="width:100%" alt="Banner">
-                <p class="text-left"><b>Table 3:</b> Per-class % IoU comparison on FMB dataset for both RGB only and RGB-infrared modalities. We show the comparison for 8 classes (out of 14) that are published. T-Lamp and T-Sign stand for Traffic Lamp and Traffic Sign respectively. Our model outperforms all the methods for all the classes except for the truck class.</p>
-            </div>
-        </div>
-
-        <div class="row">
-			<div class="col text-center">
-                <img src="./img/PST-performance-min.png" style="width:100%" alt="Banner">
-                <p class="text-left"><b>Table 4:</b> Performance comparison on PST900 dataset. We show per-class % IoU as well as % mIoU for all the classes.</p>
-            </div>
         </div>
     </div>
 
+
+    <!-- GENERALIZATION -->
     <div class="section">
-        <h2>Effect of Adding Different Modalities</h2>
+        <h2>Generalization and Robustness</h2>
         <hr>
-        <div class="row">
-			<div class="col text-center">
-                <img src="./img/mcubes-per-class-modality-combination-min.png" style="width:100%" alt="Banner">
-                <p class="text-left"><b>Table 5:</b> Per class % IoU comparison on Multimodal Material Segmentation (MCubeS) dataset for different modality combinations. As we add modalities incrementally, overall performance increases gradually. This table also shows that specific modality combinations assist in identifying specific types of materials better.</p>
-            </div>
+        <div class="row text-center">
+        <div class="col-md-12">
+            <img src="./img/fig1.png" style="width:90%" alt="Generalization under missing text">
+            <p class="text-left"><b>Figure 1:</b> Models are trained with 100% image + 100% text and evaluated with 100% image + x% text. CMPTs generalize effectively across varying missing-modality rates, retaining strong performance even with only 10% text available.</p>
         </div>
-
-        <div class="row">
-			<div class="col text-center">
-                <img src="./img/visualization-modality-combination-min.png" style="width:85%" alt="Banner">
-                <p class="text-left"><b>Figure 3:</b> Visualization of predicted segmentation maps for different modality combinations on MCubeS and FMB datasets. Both figures show that prediction accuracy increases as we incrementally add new modalities. They also illustrate the fusion block’s ability to effectively combine information from different modality combinations.</p>
-            </div>
+        <div class="col-md-12">
+            <img src="./img/fig2.png" style="width:90%" alt="Per-class robustness">
+            <p class="text-left"><b>Figure 2:</b> Per-class improvement on MM-IMDb. CMPTs enhance performance across most classes, especially modality-sensitive ones (e.g., Horror, Animation).</p>
         </div>
-    </div> -->
+        </div>
+    </div>
 
-    
-    <!-- <div class="section">
-        <h2>Paper</h2>
+    <!-- QUALITATIVE -->
+    <div class="section">
+        <h2>Qualitative Analysis</h2>
         <hr>
-        <div>
-            <div class="list-group">
-                <a href="https://arxiv.org/abs/2501.17823"
-                   class="list-group-item">
-                    <img src="img/paper.jpeg" style="width:100%; margin-right:-20px; margin-top:-10px;">
-                </a>
-            </div>
+        <div class="row text-center">
+        <div class="col-md-12">
+            <img src="./img/tsne.png" style="width:90%" alt="t-SNE visualization">
+            <p class="text-left"><b>Figure 3:</b> t-SNE visualization of fused embeddings. CMPTs (blue) align missing-modality features closely with full-modality embeddings (green).</p>
         </div>
-    </div> -->
+        <div class="col-md-12">
+            <img src="./img/attention-map.png" style="width:90%" alt="Attention visualization">
+            <p class="text-left"><b>Figure 4:</b> Attention maps show CMPTs focus on semantically relevant regions, correcting mispredictions caused by missing modalities.</p>
+        </div>
+        </div>
+    </div>
+
+    <!-- FUTURE WORK -->
+    <div class="section">
+        <h2>Future Directions</h2>
+        <hr>
+        <ul>
+        <li>Design a better training strategy that encourages more uniform reliance on different modalities while maintaining overall performance in both complete and missing modality scenarios.</li>
+        <li>Develop a general framework for explaining modality contribution and expected performance drop under different missing modality scenarios.</li>
+        <li>Extend CMPTs to three or more modalities to enhance generalizability and applicability to a wide range of datasets and tasks.</li>
+        </ul>
+    </div>
 
     <div class="section">
         <h2>Bibtex</h2>
