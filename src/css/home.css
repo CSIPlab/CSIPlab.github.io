@@ -61,6 +61,15 @@ a:hover {
   line-height: 1.25;
 }
 
+/* on sub-pages the lab name links home, but should not read as a link */
+.lab-name a {
+  color: inherit;
+}
+
+.lab-name a:hover {
+  color: var(--link-hover);
+}
+
 .lab-tagline {
   margin: 8px 0 0;
   font-size: 17px;
@@ -80,6 +89,12 @@ a:hover {
 .inline-links .sep {
   color: #b0b0b0;
   padding: 0 5px;
+}
+
+/* the nav entry for the page you are already on */
+.inline-links .current {
+  color: var(--text);
+  font-weight: 700;
 }
 
 /* --- section headings --------------------------------------------------- */
@@ -177,6 +192,70 @@ a:hover {
 .paper-tldr {
   margin: 8px 0 0;
   color: #333;
+}
+
+/* --- team grid (team.html) ---------------------------------------------- */
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 28px 20px;
+  margin-top: 22px;
+}
+
+.member {
+  text-align: center;
+}
+
+.member-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center 22%;
+  background: #f0f0f0;
+  border-radius: 3px;
+}
+
+.member-name {
+  display: block;
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+.member-title {
+  display: block;
+  color: var(--muted);
+}
+
+/* --- alumni list (team.html) -------------------------------------------- */
+
+.alumni {
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.alumni li {
+  padding: 8px 2px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.alumni li:last-child {
+  border-bottom: none;
+}
+
+.alumni-name {
+  font-weight: 700;
+}
+
+.alumni-meta {
+  color: var(--muted);
+}
+
+.alumni-next {
+  color: var(--muted);
+  white-space: nowrap;
 }
 
 /* --- footer ------------------------------------------------------------- */
