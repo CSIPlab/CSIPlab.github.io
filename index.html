@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Computational Sensing and Information Processing Lab at UC Riverside. Research in computational imaging, inverse problems, and robust and trustworthy machine learning.">
+    <meta name="author" content="M. Salman Asif">
+
+    <title>CSIPLab | Computational Sensing and Information Processing Lab, UCR</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="src/css/home.css">
+</head>
+
+<body>
+<div class="page">
+
+    <header class="site-header">
+        <h1 class="lab-name">Computational Sensing and Information Processing Lab</h1>
+        <p class="lab-tagline">Computational Imaging and Machine Learning at UC Riverside</p>
+
+        <p class="lab-intro">
+            We are a research group in the
+            <a href="https://www.ece.ucr.edu/" target="_blank" rel="noopener">Department of Electrical and Computer Engineering</a>
+            at the University of California, Riverside, directed by
+            <a href="https://intra.ece.ucr.edu/~sasif/" target="_blank" rel="noopener">M. Salman Asif</a>.
+            Our work spans computational imaging and optics, inverse problems, and machine learning &mdash;
+            with a recent focus on wavefront sensing, robust multimodal learning, and trustworthy AI
+            (adversarial robustness and machine unlearning).
+        </p>
+
+        <p class="inline-links">
+            <a href="https://intra.ece.ucr.edu/~sasif/" target="_blank" rel="noopener">Director</a>
+            <span class="sep">/</span>
+            <a href="https://github.com/CSIPlab" target="_blank" rel="noopener">GitHub</a>
+            <span class="sep">/</span>
+            <a href="https://www.ece.ucr.edu/" target="_blank" rel="noopener">UCR ECE</a>
+        </p>
+    </header>
+
+    <main>
+        <h2 class="section-title">Research</h2>
+        <p class="section-note">Projects and publications, most recent first. Recent work is <span class="paper-tag">highlighted</span>.</p>
+
+        <!--
+            To add a project, copy one <article class="paper"> block below and place it in
+            publication-date order (newest at the top). Add the class "paper--new" for
+            highlighting, and remove it from older entries as new ones are added.
+            Thumbnails are served from each project's own sub-directory.
+        -->
+        <div class="papers">
+
+            <!-- ECCV 2026 · project page lives in the separate CSIPlab/coprime-psi repository -->
+            <article class="paper paper--new">
+                <div class="paper-thumb">
+                    <a href="https://csiplab.github.io/coprime-psi/" target="_blank" rel="noopener">
+                        <img src="https://csiplab.github.io/coprime-psi/assets/intro_figure_v5.png"
+                             alt="Self-reference interferometry wavefront sensing overview">
+                    </a>
+                </div>
+                <div class="paper-body">
+                    <a class="paper-title" href="https://csiplab.github.io/coprime-psi/" target="_blank" rel="noopener">Provable and Robust Wavefront Sensing via Self-Reference Interferometry</a>
+                    <span class="paper-tag">(New)</span>
+                    <br>
+                    <span class="paper-authors">
+                        <a href="https://nebiyouten.github.io/" target="_blank" rel="noopener">Nebiyou Yismaw</a>,
+                        Vishwanath Saragadam,
+                        Aswin C. Sankaranarayanan,
+                        <a href="https://intra.ece.ucr.edu/~sasif/" target="_blank" rel="noopener">M. Salman Asif</a>
+                    </span>
+                    <br>
+                    <span class="paper-venue"><em>European Conference on Computer Vision (ECCV)</em>, 2026</span>
+                    <span class="paper-award">(Oral Presentation)</span>
+                    <br>
+                    <span class="paper-links">
+                        <a href="https://csiplab.github.io/coprime-psi/" target="_blank" rel="noopener">project page</a>
+                        <span class="sep">/</span>
+                        <a href="https://arxiv.org/abs/2604.03564" target="_blank" rel="noopener">arXiv</a>
+                        <span class="sep">/</span>
+                        <a href="https://csiplab.github.io/coprime-psi/assets/paper.pdf" target="_blank" rel="noopener">paper</a>
+                        <span class="sep">/</span>
+                        <a href="https://csiplab.github.io/coprime-psi/assets/supplementary.pdf" target="_blank" rel="noopener">supplementary</a>
+                    </span>
+                    <p class="paper-tldr">
+                        Interfering an incoming wave with spatially shifted copies of itself removes the need for a stable
+                        reference beam. We recover the global phase by propagating pairwise differences across a connected
+                        graph, and prove that co-prime shifts guarantee connectivity and bound error accumulation &mdash;
+                        recovering complete phase profiles from as few as eight measurements, validated on a hardware prototype.
+                    </p>
+                </div>
+            </article>
+
+            <!-- TMLR 2026 · no project page yet; links and thumbnail point off-site until one is built -->
+            <article class="paper paper--new">
+                <div class="paper-thumb">
+                    <a href="https://openreview.net/forum?id=If2OGZMJxs" target="_blank" rel="noopener">
+                        <img loading="lazy" src="https://ytengtan.github.io/assets/home/images/transform.png"
+                             alt="Transform-Triggered Adversarial Examples">
+                    </a>
+                </div>
+                <div class="paper-body">
+                    <a class="paper-title" href="https://openreview.net/forum?id=If2OGZMJxs" target="_blank" rel="noopener">Transform-Triggered Adversarial Examples</a>
+                    <span class="paper-tag">(New)</span>
+                    <br>
+                    <span class="paper-authors">
+                        <a href="https://ytengtan.github.io/" target="_blank" rel="noopener">Yaoteng Tan</a>,
+                        <a href="https://zikuicai.github.io/" target="_blank" rel="noopener">Zikui Cai</a>,
+                        <a href="https://intra.ece.ucr.edu/~sasif/" target="_blank" rel="noopener">M. Salman Asif</a>
+                    </span>
+                    <br>
+                    <span class="paper-venue"><em>Transactions on Machine Learning Research (TMLR)</em>, June 2026</span>
+                    <br>
+                    <span class="paper-links">
+                        <a href="https://openreview.net/forum?id=If2OGZMJxs" target="_blank" rel="noopener">OpenReview</a>
+                        <span class="sep">/</span>
+                        <a href="https://arxiv.org/abs/2406.08443" target="_blank" rel="noopener">arXiv</a>
+                    </span>
+                    <p class="paper-tldr">
+                        Adversarial perturbations depend on the image transforms applied to them. We exploit this overlooked
+                        property to craft metamorphic perturbations whose adversarial effect is a controllable function of the
+                        transformation parameter, and show the behavior persists through a camera in the physical world &mdash;
+                        useful for both stronger attacks and transform-triggered defenses.
+                    </p>
+                </div>
+            </article>
+
+            <article class="paper">
+                <div class="paper-thumb">
+                    <a href="cross-modal-proxy-tokens/">
+                        <img loading="lazy" src="./cross-modal-proxy-tokens/img/model-diagram-4.png" alt="Cross-Modal Proxy Tokens">
+                    </a>
+                </div>
+                <div class="paper-body">
+                    <a class="paper-title" href="cross-modal-proxy-tokens/">Robust Multimodal Learning via Cross-Modal Proxy Tokens</a>
+                    <br>
+                    <span class="paper-authors">
+                        <a href="https://kaykobad.github.io/" target="_blank" rel="noopener">Md Kaykobad Reza</a>,
+                        Ameya Patil,
+                        Mashhour Solh,
+                        <a href="https://intra.ece.ucr.edu/~sasif/" target="_blank" rel="noopener">M. Salman Asif</a>
+                    </span>
+                    <br>
+                    <span class="paper-venue"><em>Transactions on Machine Learning Research (TMLR)</em>, 2025</span>
+                    <br>
+                    <span class="paper-links">
+                        <a href="cross-modal-proxy-tokens/">project page</a>
+                        <span class="sep">/</span>
+                        <a href="https://openreview.net/forum?id=Wtc6wvcYJ0" target="_blank" rel="noopener">OpenReview</a>
+                        <span class="sep">/</span>
+                        <a href="https://arxiv.org/abs/2501.17823" target="_blank" rel="noopener">arXiv</a>
+                        <span class="sep">/</span>
+                        <a href="https://github.com/CSIPlab/Cross-Modal-Proxy-Tokens" target="_blank" rel="noopener">code</a>
+                    </span>
+                    <p class="paper-tldr">
+                        Cross-modal proxy tokens approximate the class token of a missing modality by attending only to the
+                        tokens of the available modality &mdash; no modality generation, no auxiliary networks. With rank-1
+                        LoRA adapters in frozen unimodal encoders, this beats state-of-the-art baselines across missing rates
+                        on five datasets while staying competitive with complete modalities.
+                    </p>
+                </div>
+            </article>
+
+            <article class="paper">
+                <div class="paper-thumb">
+                    <a href="icip2025_multimodal/">
+                        <img loading="lazy" src="./icip2025_multimodal/img/mml-tutorial.png" alt="Robust Multimodal Learning Tutorial">
+                    </a>
+                </div>
+                <div class="paper-body">
+                    <a class="paper-title" href="icip2025_multimodal/">Foundations and Recent Trends in Robust Multimodal Learning</a>
+                    <br>
+                    <span class="paper-authors">
+                        <a href="https://intra.ece.ucr.edu/~sasif/" target="_blank" rel="noopener">M. Salman Asif</a>,
+                        <a href="https://kaykobad.github.io/" target="_blank" rel="noopener">Md Kaykobad Reza</a>
+                    </span>
+                    <br>
+                    <span class="paper-venue"><em>IEEE International Conference on Image Processing (ICIP)</em>, 2025</span>
+                    <span class="paper-award">(Tutorial)</span>
+                    <br>
+                    <span class="paper-links">
+                        <a href="icip2025_multimodal/">tutorial page</a>
+                    </span>
+                    <p class="paper-tldr">
+                        A tutorial overview of robust multimodal learning, from the fundamentals of fusion, alignment, and
+                        representation learning through the architectures and models that keep performance from collapsing
+                        when modalities are noisy or missing.
+                    </p>
+                </div>
+            </article>
+
+            <article class="paper">
+                <div class="paper-thumb">
+                    <a href="slug/">
+                        <img loading="lazy" src="./slug/assets/project/slug/slug-framework.svg" alt="SLUG: Single Layer Unlearning Gradient">
+                    </a>
+                </div>
+                <div class="paper-body">
+                    <a class="paper-title" href="slug/">Targeted Unlearning with Single Layer Unlearning Gradient</a>
+                    <br>
+                    <span class="paper-authors">
+                        <a href="https://zikuicai.github.io/" target="_blank" rel="noopener">Zikui Cai</a>,
+                        <a href="https://ytengtan.github.io/" target="_blank" rel="noopener">Yaoteng Tan</a>,
+                        <a href="https://intra.ece.ucr.edu/~sasif/" target="_blank" rel="noopener">M. Salman Asif</a>
+                    </span>
+                    <br>
+                    <span class="paper-venue"><em>International Conference on Machine Learning (ICML)</em>, 2025</span>
+                    <br>
+                    <span class="paper-links">
+                        <a href="slug/">project page</a>
+                        <span class="sep">/</span>
+                        <a href="https://arxiv.org/abs/2407.11867" target="_blank" rel="noopener">arXiv</a>
+                        <span class="sep">/</span>
+                        <a href="https://github.com/CSIPlab/SLUG" target="_blank" rel="noopener">code</a>
+                        <span class="sep">/</span>
+                        <a href="https://colab.research.google.com/drive/1sjLWKPIXi961KPV-t1ugIdwaF7bdBjt7?usp=sharing" target="_blank" rel="noopener">demo</a>
+                    </span>
+                    <p class="paper-tldr">
+                        SLUG unlearns targeted information by updating a single critical layer from a one-time gradient
+                        computation, using layer-importance and gradient-alignment metrics to pick that layer. It removes
+                        concrete and abstract concepts from CLIP, Stable Diffusion, and VLMs at a small fraction of the
+                        compute of existing methods.
+                    </p>
+                </div>
+            </article>
+
+            <article class="paper">
+                <div class="paper-thumb">
+                    <a href="Missing-Modality-Adaptation/">
+                        <img loading="lazy" src="./Missing-Modality-Adaptation/img/ssf-final.png" alt="Parameter-efficient adaptation for missing modalities">
+                    </a>
+                </div>
+                <div class="paper-body">
+                    <a class="paper-title" href="Missing-Modality-Adaptation/">Robust Multimodal Learning with Missing Modalities via Parameter-Efficient Adaptation</a>
+                    <br>
+                    <span class="paper-authors">
+                        <a href="https://kaykobad.github.io/" target="_blank" rel="noopener">Md Kaykobad Reza</a>,
+                        Ashley Prater-Bennette,
+                        <a href="https://intra.ece.ucr.edu/~sasif/" target="_blank" rel="noopener">M. Salman Asif</a>
+                    </span>
+                    <br>
+                    <span class="paper-venue"><em>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</em>, 2024</span>
+                    <br>
+                    <span class="paper-links">
+                        <a href="Missing-Modality-Adaptation/">project page</a>
+                        <span class="sep">/</span>
+                        <a href="https://ieeexplore.ieee.org/document/10713849" target="_blank" rel="noopener">IEEE Xplore</a>
+                        <span class="sep">/</span>
+                        <a href="https://arxiv.org/abs/2310.03986" target="_blank" rel="noopener">arXiv</a>
+                        <span class="sep">/</span>
+                        <a href="https://github.com/CSIPlab/Robust-multimodal-learning" target="_blank" rel="noopener">code</a>
+                    </span>
+                    <p class="paper-tldr">
+                        Pretrained multimodal networks degrade sharply when a modality is absent at test time. Modulating
+                        intermediate features with fewer than 1% of the model's parameters compensates for the missing inputs,
+                        and often beats dedicated networks trained for each available modality combination &mdash; demonstrated
+                        on five tasks across seven datasets.
+                    </p>
+                </div>
+            </article>
+
+            <article class="paper">
+                <div class="paper-thumb">
+                    <a href="MMSFormer/">
+                        <img loading="lazy" src="./MMSFormer/img/MMSFormer-min.png" alt="MMSFormer architecture">
+                    </a>
+                </div>
+                <div class="paper-body">
+                    <a class="paper-title" href="MMSFormer/">MMSFormer: Multimodal Transformer for Material and Semantic Segmentation</a>
+                    <br>
+                    <span class="paper-authors">
+                        <a href="https://kaykobad.github.io/" target="_blank" rel="noopener">Md Kaykobad Reza</a>,
+                        Ashley Prater-Bennette,
+                        <a href="https://intra.ece.ucr.edu/~sasif/" target="_blank" rel="noopener">M. Salman Asif</a>
+                    </span>
+                    <br>
+                    <span class="paper-venue"><em>IEEE Open Journal of Signal Processing (OJSP)</em>, 2024</span>
+                    <br>
+                    <span class="paper-links">
+                        <a href="MMSFormer/">project page</a>
+                        <span class="sep">/</span>
+                        <a href="https://ieeexplore.ieee.org/document/10502124" target="_blank" rel="noopener">IEEE Xplore</a>
+                        <span class="sep">/</span>
+                        <a href="https://arxiv.org/abs/2309.04001" target="_blank" rel="noopener">arXiv</a>
+                        <span class="sep">/</span>
+                        <a href="https://github.com/CSIPlab/MMSFormer" target="_blank" rel="noopener">code</a>
+                    </span>
+                    <p class="paper-tldr">
+                        A mixed-modality fusion block that combines information from arbitrary modality combinations, built
+                        into a Multi-Modal Segmentation TransFormer for material and semantic segmentation. Accuracy improves
+                        monotonically as modalities are added, setting state of the art on three datasets.
+                    </p>
+                </div>
+            </article>
+
+            <article class="paper">
+                <div class="paper-thumb">
+                    <a href="DomainExpansionInverseProblems/">
+                        <img loading="lazy" src="./DomainExpansionInverseProblems/static/images/intro_figure.png" alt="Domain expansion for inverse problems">
+                    </a>
+                </div>
+                <div class="paper-body">
+                    <a class="paper-title" href="DomainExpansionInverseProblems/">Domain Expansion via Network Adaptation for Solving Inverse Problems</a>
+                    <br>
+                    <span class="paper-authors">
+                        <a href="https://nebiyouten.github.io/" target="_blank" rel="noopener">Nebiyou Yismaw</a>,
+                        <a href="https://ukmlv.github.io/" target="_blank" rel="noopener">Ulugbek S. Kamilov</a>,
+                        <a href="https://intra.ece.ucr.edu/~sasif/" target="_blank" rel="noopener">M. Salman Asif</a>
+                    </span>
+                    <br>
+                    <span class="paper-venue"><em>IEEE Transactions on Computational Imaging (TCI)</em>, 2024</span>
+                    <br>
+                    <span class="paper-links">
+                        <a href="DomainExpansionInverseProblems/">project page</a>
+                        <span class="sep">/</span>
+                        <a href="https://doi.org/10.1109/TCI.2024.3377101" target="_blank" rel="noopener">IEEE Xplore</a>
+                        <span class="sep">/</span>
+                        <a href="https://arxiv.org/abs/2310.06235" target="_blank" rel="noopener">arXiv</a>
+                    </span>
+                    <p class="paper-tldr">
+                        Networks trained to solve inverse problems are fragile under shifts in data distribution, measurement
+                        operator, and noise level. We characterize the effects of those shifts and propose a flexible,
+                        parameter-efficient framework that adapts a pretrained network to expand its domain of validity.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2023&ndash;2026 Computational Sensing and Information Processing Lab, University of California, Riverside</p>
+    </footer>
+
+</div>
+</body>
+</html>
